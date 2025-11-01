@@ -12,7 +12,7 @@ class MNIXDataModule(LightningDataModule):
     def setup(self, stage=None):
         rank_zero_info("Setting up dataset...")
         # Initialize StreamingDataset from the optimized data directory
-        # It's important to be initialized here even to work properly with DDP
+        # It's important that this is initialized here to work properly with DDP
         self.dataset = StreamingDataset("mnix_data")
 
     def train_dataloader(self):
