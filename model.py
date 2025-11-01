@@ -15,8 +15,8 @@ class MNIXModel(LightningModule):
 
     def training_step(self, batch):
         x, y = batch["image"], batch["class"]
-        y_hat = self(x)
-        loss = self.criterion(y_hat, y)
+        y_hat = self(x)  # Forward pass
+        loss = self.criterion(y_hat, y)  # Compute loss
         return loss
 
     def configure_optimizers(self):
@@ -24,6 +24,7 @@ class MNIXModel(LightningModule):
 
 
 if __name__ == "__main__":
+    # Quick test to verify the model works with a sample batch
     from data_module import MNIXDataModule
 
     data_module = MNIXDataModule()
