@@ -1,5 +1,9 @@
 # Minimal DDP Example with LitData and PyTorch Lightning
 
+[![CI](https://github.com/bhimrazy/minimal-ddp-example/actions/workflows/ci.yml/badge.svg)](https://github.com/bhimrazy/minimal-ddp-example/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+
 This repository provides a minimal example of using [LitData](https://github.com/Lightning-AI/litData) with [PyTorch Lightning](https://lightning.ai/docs/pytorch/stable/) for distributed data parallel (DDP) training.
 
 ## Overview
