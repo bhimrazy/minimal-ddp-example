@@ -1,4 +1,5 @@
 from lightning import LightningDataModule
+from lightning.pytorch.utilities.rank_zero import rank_zero_info
 from litdata import StreamingDataLoader, StreamingDataset
 
 
@@ -9,6 +10,9 @@ class MNIXDataModule(LightningDataModule):
         self.num_workers = num_workers
 
     def setup(self, stage=None):
+        rank_zero_info("Setting up dataset...")
+        # Initialize StreamingDataset from the optimized data directory
+        # It's important that this is initialized here to work properly with DDP
         self.dataset = StreamingDataset("mnix_data")
 
     def train_dataloader(self):
