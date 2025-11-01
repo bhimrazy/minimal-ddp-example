@@ -2,12 +2,12 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   schedule:
     # Run every Sunday at midnight UTC
-    - cron: '0 0 * * 0'
+    - cron: "0 0 * * 0"
 
 jobs:
   ruff:
@@ -46,7 +46,7 @@ jobs:
       - name: Install project dependencies
         run: |
           uv pip install -r requirements.txt
-          uv pip list 
+          uv pip list
 
       - name: Prepare training data
         run: |
